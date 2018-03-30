@@ -12,13 +12,15 @@ function printMousePos(event) {
     var y = window.scrollY + event.clientY;
 
     var note = document.createElement("div");
-    note.id = "maki-note";
-    note.style = "background: #F4E6D6; position: absolute; top: " + y + "px; left: " + x + "px; width: 200px; height: 100px;";
+    note.classList.add("maki-note");
+    note.style.top = "" + y + "px";
+    note.style.left = "" + x + "px";
 
     var input = document.createElement("textarea");
-    input.style = "margin: 4px; width: 100%; height: 100%;";
+    input.classList.add("maki-note-input");
     input.placeholder = "Zozo is the catgirl princess";
     var button = document.createElement("button");
+    button.classList.add("maki-note-button");
     button.textContent = "submit";
     note.appendChild(input);
     note.appendChild(button);
