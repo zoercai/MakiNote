@@ -1,0 +1,25 @@
+{
+    "name": "MakiNote",
+    "version": "1.0",
+    "description": "Add and share notes to pages!",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "storage"
+    ],
+    "browser_action": {},
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["makinote.css"],
+            "js": ["loadNotes.js"]
+        }
+    ],
+    "manifest_version": 2
+}

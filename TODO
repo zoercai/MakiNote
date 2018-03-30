@@ -1,0 +1,12 @@
+* click on toolbar button, show overlay that allows you to add a note (absolute positioning)
+    * note should immediately show on the page after add
+    * note should show when page is refreshed
+* right click toolbar, menu gives option to toggle all notes shown on the page
+* when a note is saved, persist to database
+    ID*
+    UserID
+    URL*
+    Location*
+    Note content*
+    Created*
+    Modified
