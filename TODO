@@ -10,3 +10,10 @@
     Note content*
     Created*
     Modified
+
+
+
+loading page: all notes for url='?'
+delete/edit: edit by primary key
+add: add everything
+notes by user
