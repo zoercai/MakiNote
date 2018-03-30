@@ -3,9 +3,7 @@
     "version": "1.0",
     "description": "Add and share notes to pages!",
     "background": {
-        "scripts": [
-            "background.js"
-        ],
+        "scripts": ["common.js", "background.js"],
         "persistent": false
     },
     "permissions": [
@@ -18,7 +16,7 @@
         {
             "matches": ["<all_urls>"],
             "css": ["makinote.css"],
-            "js": ["loadNotes.js"]
+            "js": ["common.js", "loadNotes.js"]
         }
     ],
     "manifest_version": 2
