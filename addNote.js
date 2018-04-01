@@ -36,7 +36,7 @@ function printMousePos(event) {
     var y = window.scrollY + event.clientY;
 
     var newNoteDiv = document.createElement("div");
-    newNoteDiv.classList.add("maki-note");
+    newNoteDiv.classList.add("new-maki-note");
     newNoteDiv.style.top = "" + y + "px";
     newNoteDiv.style.left = "" + x + "px";
 
@@ -56,6 +56,7 @@ function printMousePos(event) {
             'id': 'makinote-'+now,
             'url': window.location.href,
             'coords': {'x': x, 'y': y},
+            'dims': {'x': newNoteDiv.offsetWidth, 'y': newNoteDiv.offsetHeight},
             'created': now,
             'modified': now,
         };

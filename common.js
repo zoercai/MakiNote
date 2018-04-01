@@ -8,10 +8,18 @@ function getDocHeight() {
 }
 
 function addNote(note) {
-    var note_div = document.createElement("div");
-    note_div.classList.add("maki-note");
-    note_div.style.top = "" + note.coords.y + "px";
-    note_div.style.left = "" + note.coords.x + "px";
-    note_div.textContent = note.text;
-    document.getElementById("maki-invis-overlay").appendChild(note_div);
+    console.log(note)
+    var noteDiv = document.createElement("div");
+    noteDiv.classList.add("maki-note");
+    noteDiv.style.top = note.coords.y + "px";
+    noteDiv.style.left = note.coords.x + "px";
+    noteDiv.style.height = note.dims.y + "px";
+    noteDiv.style.width = note.dims.x + "px";
+
+    var noteText = document.createElement("p");
+    noteText.classList.add("maki-note-text");
+    noteText.textContent = note.text;
+    noteDiv.appendChild(noteText);
+
+    document.getElementById("maki-invis-overlay").appendChild(noteDiv);
 }

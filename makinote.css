@@ -11,6 +11,17 @@
 .maki-note {
     background: #F4E6D6;
     position: absolute;
+    word-wrap: break-word;
+    font-family: "Schoolbell";
+}
+
+.maki-note-text {
+    padding: 11px;
+}
+
+.new-maki-note {
+    background: #F4E6D6;
+    position: absolute;
     display: flex;
     flex-direction: column;
     padding: 4px;
@@ -18,10 +29,12 @@
 
 .maki-note-input {
     flex-grow: 1;
-    margin: 4px;
+    padding: 11px;
     width: auto;
-    min-width: 200px;
-    min-height: 100px;
+    min-width: 100px;
+    min-height: 30px;
+    font-family: "Schoolbell";
+    font-size: 16px
 }
 
 .maki-note-button {
