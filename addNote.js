@@ -18,7 +18,7 @@ function addOverlay() {
     var overlay = document.createElement("div");
     overlay.classList.add("maki-overlay");
     overlay.id = "maki-overlay";
-    overlay.style = "position: absolute; z-index: 99999999999; top: 0; left: 0; width: 100%; height: " + getDocHeight() + "px; background-color: rgba(242, 180, 199, 0.83); cursor: crosshair;";
+    overlay.style.height = getDocHeight() + "px";
     document.body.appendChild(overlay);
     overlay.addEventListener("click", printMousePos);
 }
