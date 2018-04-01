@@ -1,20 +1,44 @@
 console.log("hello dean!");
-var overlay = document.createElement("div");
-overlay.classList.add("maki-overlay");
-overlay.style = "position: absolute; z-index: 99999999999; top: 0; left: 0; width: 100%; height: " + getDocHeight() + "px; background-color: rgba(242, 180, 199, 0.83); cursor: crosshair;";
-document.body.appendChild(overlay);
+
+if (!overlayExists()) {
+    addOverlay();
+} else {
+    deleteOverlay();
+}
+
+function getOverlay() {
+    return document.getElementById("maki-overlay");
+}
+
+function overlayExists() {
+    return getOverlay() !== null;
+}
+
+function addOverlay() {
+    var overlay = document.createElement("div");
+    overlay.classList.add("maki-overlay");
+    overlay.id = "maki-overlay";
+    overlay.style = "position: absolute; z-index: 99999999999; top: 0; left: 0; width: 100%; height: " + getDocHeight() + "px; background-color: rgba(242, 180, 199, 0.83); cursor: crosshair;";
+    document.body.appendChild(overlay);
+    overlay.addEventListener("click", printMousePos);
+}
+
+function deleteOverlay() {
+    document.body.removeChild(document.getElementById("maki-overlay"));
+}
 
 function printMousePos(event) {
 
+    overlay = getOverlay();
     overlay.removeEventListener("click", printMousePos);
 
     var x = window.scrollX + event.clientX;
     var y = window.scrollY + event.clientY;
 
-    var note = document.createElement("div");
-    note.classList.add("maki-note");
-    note.style.top = "" + y + "px";
-    note.style.left = "" + x + "px";
+    var newNoteDiv = document.createElement("div");
+    newNoteDiv.classList.add("maki-note");
+    newNoteDiv.style.top = "" + y + "px";
+    newNoteDiv.style.left = "" + x + "px";
 
     var input = document.createElement("textarea");
     input.classList.add("maki-note-input");
@@ -22,9 +46,9 @@ function printMousePos(event) {
     var button = document.createElement("button");
     button.classList.add("maki-note-button");
     button.textContent = "submit";
-    note.appendChild(input);
-    note.appendChild(button);
-    overlay.appendChild(note);
+    newNoteDiv.appendChild(input);
+    newNoteDiv.appendChild(button);
+    overlay.appendChild(newNoteDiv);
     button.addEventListener("click", function(ev) {
         var now = Date.now();
         var note_obj = {
@@ -38,9 +62,10 @@ function printMousePos(event) {
 
         localStorage.setItem(note_obj.id, JSON.stringify(note_obj));
 
+        overlay.removeChild(newNoteDiv);
+        addNote(note_obj);
+
         overlay.addEventListener("click", printMousePos);
         ev.stopPropagation();
     });
-
 }
-overlay.addEventListener("click", printMousePos);
