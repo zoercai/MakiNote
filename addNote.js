@@ -1,5 +1,3 @@
-console.log("hello dean!");
-
 if (!overlayExists()) {
     addOverlay();
 } else {
@@ -42,7 +40,7 @@ function printMousePos(event) {
 
     var input = document.createElement("textarea");
     input.classList.add("maki-note-input");
-    input.placeholder = "Zozo is the catgirl princess";
+    input.placeholder = "Write note here";
     var button = document.createElement("button");
     button.classList.add("maki-note-button");
     button.textContent = "submit";

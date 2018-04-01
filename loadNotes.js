@@ -1,4 +1,3 @@
-console.log('on page load')
 var overlay = document.createElement("div");
 overlay.classList.add("maki-invis-overlay");
 overlay.id = "maki-invis-overlay";
