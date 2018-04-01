@@ -1,6 +1,6 @@
 console.log("hello dean!");
 var overlay = document.createElement("div");
-overlay.id = "maki-overlay";
+overlay.classList.add("maki-overlay");
 overlay.style = "position: absolute; z-index: 99999999999; top: 0; left: 0; width: 100%; height: " + getDocHeight() + "px; background-color: rgba(242, 180, 199, 0.83); cursor: crosshair;";
 document.body.appendChild(overlay);
 
@@ -44,12 +44,3 @@ function printMousePos(event) {
 
 }
 overlay.addEventListener("click", printMousePos);
-
-function getDocHeight() {
-    var D = document;
-    return Math.max(
-        D.body.scrollHeight, D.documentElement.scrollHeight,
-        D.body.offsetHeight, D.documentElement.offsetHeight,
-        D.body.clientHeight, D.documentElement.clientHeight
-    );
-}
