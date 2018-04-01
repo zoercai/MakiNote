@@ -1,15 +1,50 @@
+.maki-invis-overlay {
+    position: absolute;
+    z-index: 99999999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+}
+
+.maki-overlay {
+    position: absolute;
+    z-index: 99999999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(242, 180, 199, 0.83);
+    cursor: crosshair;
+}
+
 .maki-note {
     background: #F4E6D6;
     position: absolute;
-    min-width: 200px;
-    min-height: 100px;
+    word-wrap: break-word;
+    font-family: "Schoolbell";
+}
+
+.maki-note-text {
+    padding: 11px;
+}
+
+.new-maki-note {
+    background: #F4E6D6;
+    position: absolute;
     display: flex;
     flex-direction: column;
+    padding: 4px;
 }
 
 .maki-note-input {
     flex-grow: 1;
-    margin: 4px;
+    padding: 11px;
+    width: auto;
+    min-width: 100px;
+    min-height: 30px;
+    font-family: "Schoolbell";
+    font-size: 16px
 }
 
 .maki-note-button {
