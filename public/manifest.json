@@ -1,0 +1,10 @@
+{
+  "short_name": "MakiNote",
+  "name": "MakiNote",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "MakiNote"
+  },
+  "version": "1.0"
+}
